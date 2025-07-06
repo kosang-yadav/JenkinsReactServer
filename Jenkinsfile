@@ -5,7 +5,7 @@ pipeline {
             steps {
 			    echo 'Building..'
 				checkout scm
-				bat 'npm install'
+				sh 'bun install'
             }
         }
         stage('Test') {
@@ -16,7 +16,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-				bat 'npm run build'
+				sh 'bun run build'
             }
         }
     }
